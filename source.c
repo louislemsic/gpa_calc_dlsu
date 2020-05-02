@@ -3,7 +3,9 @@
 #include <string.h>
 #include <conio.h>
 
+#define PATCH 1.3
 #define LIMIT 10
+
 typedef char STRING20[21];
 typedef char STRING50[51];
 
@@ -23,7 +25,7 @@ void initializeSubjects(subjectType * subjects) {
 	STRING20 cChoice;
 	
 	system("CLS");
-	printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+	printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 	printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 	
 	do {
@@ -32,7 +34,7 @@ void initializeSubjects(subjectType * subjects) {
 		
 		if (scanf("%d%c", &subjects->totalSubj, &cCheck) != 2 || cCheck != '\n') {	//CHECKS IF INTEGER
 		    system("CLS");
-			printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+			printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 			printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 			printf("Invalid Input. Try again.\n");
 		    tryAgain = 1;
@@ -44,7 +46,7 @@ void initializeSubjects(subjectType * subjects) {
 	
 	for (i = 0; i < subjects->totalSubj; i++){
 		system("CLS");
-		printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+		printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 		printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 		
 		fflush(stdin);
@@ -57,7 +59,7 @@ void initializeSubjects(subjectType * subjects) {
 			
 			if (scanf("%f%c", &subjects->units[i], &cCheck) != 2 || cCheck != '\n') {	//CHECKS IF INTEGER
 			    system("CLS");
-				printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+				printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 				printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 				printf("Enter Subject Code No. %d: %s\n\n", i + 1, subjects->subjCode[i]);
 				printf("Invalid Input. Try again.\n");
@@ -75,7 +77,7 @@ void initializeSubjects(subjectType * subjects) {
 	
 	
 	system("CLS");
-	printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+	printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 	printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 	do {
 		fflush(stdin);
@@ -96,7 +98,7 @@ void initializeSubjects(subjectType * subjects) {
 			tryAgain = 0;
 		else {
 			system("CLS");
-			printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+			printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 			printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 			printf("Invalid Input. Type 'Y' for yes and 'N' for no.\n");
 			tryAgain = 1;
@@ -128,7 +130,7 @@ void inputGrades(subjectType subjects, subjectType * myGrades) {
 	
 	for (i = 0; i < subjects.totalSubj; i++) {
 		system("CLS");
-		printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+		printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 		printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 		printf("         === ENCODE SYSTEM ===\n");	
 			
@@ -139,7 +141,7 @@ void inputGrades(subjectType subjects, subjectType * myGrades) {
 			if  ((scanf("%f%c", &myGrades->units[i], &cCheck) != 2 || cCheck != '\n') || //CHECKS IF INTEGER
 				  myGrades->units[i] > 4.0) {	//MUST NOT BE HIGHER THAN 4.0
 			    system("CLS");
-				printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+				printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 				printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 				printf("         === ENCODE SYSTEM ===\n");
 				printf("Invalid Input. Try Again.\n");
@@ -167,7 +169,7 @@ int printGrades(subjectType subjects, subjectType myGrades) {
 	int i;
 	
 	system("CLS");
-	printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+	printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 	printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 	printf("Enter surname: ");
 	gets(name);
@@ -196,7 +198,7 @@ int printGrades(subjectType subjects, subjectType myGrades) {
 void showLogo();
 
 int main(){
-	
+		
 	showLogo();
 	printf("\n| Made for De La Salle University students only.\n");
 	printf("| Developer: James Louis V. Lemsic | 11942169.\n");
@@ -230,7 +232,7 @@ int main(){
 	
 	do {
 		system("CLS");                              
-		printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+		printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 		printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 		printf("      == MAIN MENU ==\n");
 		printf("  |  [A] Encode Grades  \n");
@@ -262,7 +264,7 @@ int main(){
 			}
 			else {
 				system("CLS");                              
-				printf("GPA CALCULATOR 2020 v. beta1.2\n\n");
+				printf("| GPA CALCULATOR 2020 v. beta%.1f\n", PATCH);
 				printf("      == MAIN MENU ==\n");
 				printf("  |  [A] Encode Grades  \n");
 				printf("  |  [B] Print Grades   \n");
