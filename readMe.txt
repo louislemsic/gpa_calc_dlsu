@@ -20,6 +20,7 @@ Don't include anymore the extra ones.
 
 ==Patch Notes==
 
-1.0. Simple User Interface. All functions are working.
-1.2. Added a print txt function and a confidentiality checker.
-1.3. Added a logo and some strict input checkers.
+1.0. Simple User Interface. All functions are working. It just executes a simple GPA calculator.
+1.2. Added a print txt function, save settings function, and a confidentiality checker.
+
+1.3. Added a logo and some strict input checkers. If numbers are asked, only numbers could be entered.
