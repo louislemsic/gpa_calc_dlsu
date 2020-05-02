@@ -22,4 +22,4 @@ Don't include anymore the extra ones.
 
 1.0. Simple User Interface. All functions are working.
 1.2. Added a print txt function and a confidentiality checker.
-1.3. Added a logo and a some strict input checker.
+1.3. Added a logo and some strict input checkers.
