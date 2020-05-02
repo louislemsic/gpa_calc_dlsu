@@ -26,8 +26,21 @@ void initializeSubjects(subjectType * subjects) {
 	printf("| GPA CALCULATOR 2020 v. beta1.2\n");
 	printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
 	
-	printf("How many subjects do you have? [Answer with Integers]: ");
-	scanf("%d", &subjects->totalSubj);
+	do {
+		fflush(stdin);
+		printf("How many subjects do you have? [Answer with Integers]: ");
+		
+		if (scanf("%d%c", &subjects->totalSubj, &cCheck) != 2 || cCheck != '\n') {	//CHECKS IF INTEGER
+		    system("CLS");
+			printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+			printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
+			printf("Invalid Input. Try again.\n");
+		    tryAgain = 1;
+		}
+		else
+			tryAgain = 0;
+	
+	} while (tryAgain == 1);
 	
 	for (i = 0; i < subjects->totalSubj; i++){
 		system("CLS");
@@ -110,14 +123,34 @@ void loadSubjects(FILE * pSource, subjectType * subjects){
 void inputGrades(subjectType subjects, subjectType * myGrades) {
 	
 	int i;
+	int tryAgain;
+	char cCheck;
+	
 	for (i = 0; i < subjects.totalSubj; i++) {
 		system("CLS");
 		printf("| GPA CALCULATOR 2020 v. beta1.2\n");
 		printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
-		printf("         === ENCODE SYSTEM ===\n");
-		printf("What's your final grade in [%s]: ", subjects.subjCode[i]);
+		printf("         === ENCODE SYSTEM ===\n");	
+			
+		do {
+			fflush(stdin);
+			printf("What's your final grade in [%s]: ", subjects.subjCode[i]);
+			
+			if  ((scanf("%f%c", &myGrades->units[i], &cCheck) != 2 || cCheck != '\n') || //CHECKS IF INTEGER
+				  myGrades->units[i] > 4.0) {	//MUST NOT BE HIGHER THAN 4.0
+			    system("CLS");
+				printf("| GPA CALCULATOR 2020 v. beta1.2\n");
+				printf("| Lemsic Industries. All rights reserved (c) 2020.\n\n");
+				printf("         === ENCODE SYSTEM ===\n");
+				printf("Invalid Input. Try Again.\n");
+			    tryAgain = 1;
+			}
+			else
+				tryAgain = 0;
+		
+		} while (tryAgain == 1);
+		
 		strcpy(myGrades->subjCode[i], subjects.subjCode[i]);
-		scanf("%f", &myGrades->units[i]);
 		myGrades->totalUnits += subjects.units[i] * myGrades->units[i];
 	}
 	
